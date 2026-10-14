@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Zodiac Reverie</title>
+<meta name="description" content="Privacy Policy for Zodiac Reverie. Everything stays on your device — no login, no account, no tracking, no server." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg-0: #06070d; --bg-1: #0c0e1a; --bg-2: #141627;
+    --ink-0: #f5ecd7; --ink-1: #cfc5a8; --ink-2: #8c8a9b;
+    --gold: #d9b66b; --gold-soft: #b89a52;
+    --line: rgba(217, 182, 107, 0.18); --card: rgba(20, 22, 39, 0.72);
+  }
+  html, body { background: var(--bg-0); color: var(--ink-0); }
+  body {
+    margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300; line-height: 1.75; overflow-x: hidden;
+    background:
+      radial-gradient(900px 600px at 80% -10%, rgba(140, 108, 216, 0.16), transparent 60%),
+      radial-gradient(900px 600px at -10% 30%, rgba(217, 182, 107, 0.08), transparent 60%),
+      var(--bg-0);
+  }
+  .starfield {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 14% 22%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 32% 70%, #fff 50%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 50% 14%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 72% 48%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 88% 80%, #fff 50%, transparent 60%);
+    opacity: 0.5;
+  }
+  .wrap { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 0 28px; }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { color: var(--ink-0); }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    background: rgba(6, 7, 13, 0.7); border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; max-width: 1080px; margin: 0 auto;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #f7e6a8, var(--gold) 55%, #6b5226 100%);
+    box-shadow: 0 0 24px rgba(217, 182, 107, 0.4);
+  }
+  .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; letter-spacing: 0.04em; font-weight: 600; }
+  .brand-sub { font-size: 11px; color: var(--ink-2); letter-spacing: 0.2em; text-transform: uppercase; }
+  nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
+  nav ul a { font-size: 13px; color: var(--ink-1); }
+  nav ul a:hover { color: var(--gold); }
+  nav ul a.active { color: var(--gold); }
+
+  header { padding: 80px 0 30px; text-align: center; }
+  header .eyebrow { color: var(--gold); letter-spacing: 0.32em; font-size: 12px; text-transform: uppercase; }
+  header h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(36px, 5vw, 54px); margin: 14px 0 12px; letter-spacing: -0.01em;
+  }
+  header .updated { color: var(--ink-2); font-size: 13px; letter-spacing: 0.06em; }
+
+  article { padding: 30px 0 60px; }
+  article h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 26px; margin: 48px 0 14px; color: var(--ink-0);
+  }
+  article h2:first-child { margin-top: 0; }
+  article h3 { font-size: 16px; margin: 28px 0 8px; color: var(--ink-1); font-weight: 500; }
+  article p { color: var(--ink-1); margin: 0 0 16px; }
+  article ul { color: var(--ink-1); padding-left: 20px; margin: 0 0 18px; }
+  article li { margin-bottom: 6px; }
+  article strong { color: var(--ink-0); font-weight: 500; }
+
+  .summary {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 28px; margin-bottom: 30px;
+  }
+  .summary h2 { margin-top: 0 !important; }
+
+  footer {
+    border-top: 1px solid var(--line); padding: 36px 0; margin-top: 40px;
+    color: var(--ink-2); font-size: 13px; text-align: center;
+  }
+
+  @media (max-width: 720px) { nav ul { display: none; } header { padding: 60px 0 20px; } }
+</style>
+</head>
+<body>
+<div class="starfield"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div>
+        <div class="brand-name">Zodiac Reverie</div>
+        <div class="brand-sub">Privacy Policy</div>
+      </div>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="privacy.html" class="active">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Privacy Policy</div>
+    <h1>What Zodiac Reverie knows about you.</h1>
+    <div class="updated">Last updated · October 14, 2026</div>
+  </header>
+
+  <article>
+
+    <div class="summary">
+      <h2>The short version</h2>
+      <p><strong>Almost nothing.</strong> Zodiac Reverie does not collect personal data, does not require an account, does not log you in, does not show ads, does not use analytics, does not track you across other apps or websites, and does not upload the photos you select in Photo Reading. Your zodiac sign, your daily readings, your saved Library items and any portrait you choose to read stay on your device, and can be cleared with a single tap.</p>
+    </div>
+
+    <h2>1. Data we do not collect</h2>
+    <p>Zodiac Reverie is designed so that nothing identifying leaves your phone. Specifically, we do not collect:</p>
+    <ul>
+      <li>Your name, email address, phone number or contact list.</li>
+      <li>Your location, device identifier, advertising identifier (IDFA) or advertising ID.</li>
+      <li>Your photos, camera captures, or biometric data — Photo Reading runs entirely on-device.</li>
+      <li>Crash logs, analytics events, screen views, taps or session data sent to a third party.</li>
+      <li>Account credentials, because there is no account.</li>
+    </ul>
+
+    <h2>2. Data stored on your device</h2>
+    <p>The app keeps the following information locally on your device only. It is never uploaded to a server:</p>
+    <ul>
+      <li><strong>Your selected zodiac sign</strong> — so the app knows which animal to read for.</li>
+      <li><strong>Your daily reading</strong> — generated each midnight from your sign, cached so it remains stable through the day.</li>
+      <li><strong>Your Library</strong> — readings, spin results, tarot draws and photo readings you choose to save.</li>
+      <li><strong>Portraits you import for Photo Reading</strong> — stored in the app's private container. They are not visible to other apps and are removed when you delete them.</li>
+      <li><strong>Onboarding state</strong> — that you have seen and accepted the disclaimer.</li>
+    </ul>
+    <p>You can erase every item above by clearing the app's data in the iOS Settings, or by tapping <em>Clear All</em> inside the app's Settings screen.</p>
+
+    <h2>3. Photos and the camera</h2>
+    <p>Photo Reading uses the front camera or your photo library only when you tap it. The selected image is shown inside the reading you selected — it is not uploaded, scanned against a remote service, or transmitted in any form. The image is stored in the app's private container and is removed when you delete the corresponding reading or clear the app.</p>
+    <p>iOS will ask for permission before the app accesses the camera or your photo library. You can revoke these permissions at any time in <em>Settings → Privacy & Security</em>.</p>
+
+    <h2>4. No third-party SDKs, no tracking</h2>
+    <p>Zodiac Reverie does not integrate any third-party analytics, advertising, attribution, or fingerprinting SDK. There is no Facebook SDK, no Google Analytics, no Firebase, no Adjust, no AppsFlyer, no Branch, no Bugsnag, no Sentry, no Crashlytics. The app does not contact any server during normal use.</p>
+
+    <h2>5. Children's privacy</h2>
+    <p>Zodiac Reverie does not knowingly collect personal information from anyone, including children under 13 (or under the equivalent age defined by your local law). The app is offline-only and contains no interactive community features.</p>
+
+    <h2>6. Permissions requested by the app</h2>
+    <ul>
+      <li><strong>Camera</strong> — used only inside that screen, only when you tap it. The app does not record video or take photos without your explicit tap.</li>
+      <li><strong>Photo Library (read)</strong> — used only when you choose a portrait for Photo Reading.</li>
+    </ul>
+    <p>The app does not request microphone, contacts, location, motion, Bluetooth, Face ID or push notification permissions.</p>
+
+    <h2>7. Changes to this policy</h2>
+    <p>If we ever change this policy in a way that affects you, the change will appear here, and — if the change is material — inside the app. Because we do not have your email address, we cannot notify you out of band.</p>
+
+    <h2>8. Contact</h2>
+    <p>Questions, requests, or concerns about privacy can be sent to <a href="mailto:Mefepzavap@icloud.com">Mefepzavap@icloud.com</a>. We read every message.</p>
+
+    <h2>9. Disclaimer</h2>
+    <p>Zodiac Reverie is intended for entertainment and personal reflection. It is not a substitute for professional advice of any kind — medical, legal, financial, psychological, or otherwise. The readings generated by the app are generated locally from text composed for each of the twelve animals and do not reflect any factual prediction about your life. Please do not make significant life decisions based on the app's output.</p>
+
+  </article>
+
+</div>
+
+<footer>
+  © 2026 Zodiac Reverie · <a href="mailto:Mefepzavap@icloud.com">Mefepzavap@icloud.com</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Use — Zodiac Reverie</title>
+<meta name="description" content="Terms of Use for Zodiac Reverie. Please read these terms carefully before using the app." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg-0: #06070d; --bg-1: #0c0e1a; --bg-2: #141627;
+    --ink-0: #f5ecd7; --ink-1: #cfc5a8; --ink-2: #8c8a9b;
+    --gold: #d9b66b; --gold-soft: #b89a52;
+    --line: rgba(217, 182, 107, 0.18); --card: rgba(20, 22, 39, 0.72);
+  }
+  html, body { background: var(--bg-0); color: var(--ink-0); }
+  body {
+    margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300; line-height: 1.75; overflow-x: hidden;
+    background:
+      radial-gradient(900px 600px at 80% -10%, rgba(140, 108, 216, 0.16), transparent 60%),
+      radial-gradient(900px 600px at -10% 30%, rgba(217, 182, 107, 0.08), transparent 60%),
+      var(--bg-0);
+  }
+  .starfield {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 14% 22%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 32% 70%, #fff 50%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 50% 14%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 72% 48%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 88% 80%, #fff 50%, transparent 60%);
+    opacity: 0.5;
+  }
+  .wrap { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 0 28px; }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { color: var(--ink-0); }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    background: rgba(6, 7, 13, 0.7); border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; max-width: 1080px; margin: 0 auto;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #f7e6a8, var(--gold) 55%, #6b5226 100%);
+    box-shadow: 0 0 24px rgba(217, 182, 107, 0.4);
+  }
+  .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; letter-spacing: 0.04em; font-weight: 600; }
+  .brand-sub { font-size: 11px; color: var(--ink-2); letter-spacing: 0.2em; text-transform: uppercase; }
+  nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
+  nav ul a { font-size: 13px; color: var(--ink-1); }
+  nav ul a:hover { color: var(--gold); }
+  nav ul a.active { color: var(--gold); }
+
+  header { padding: 80px 0 30px; text-align: center; }
+  header .eyebrow { color: var(--gold); letter-spacing: 0.32em; font-size: 12px; text-transform: uppercase; }
+  header h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(36px, 5vw, 54px); margin: 14px 0 12px; letter-spacing: -0.01em;
+  }
+  header .updated { color: var(--ink-2); font-size: 13px; letter-spacing: 0.06em; }
+
+  article { padding: 30px 0 60px; }
+  article h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 26px; margin: 48px 0 14px; color: var(--ink-0);
+  }
+  article h2:first-child { margin-top: 0; }
+  article p { color: var(--ink-1); margin: 0 0 16px; }
+  article ul { color: var(--ink-1); padding-left: 20px; margin: 0 0 18px; }
+  article li { margin-bottom: 6px; }
+  article strong { color: var(--ink-0); font-weight: 500; }
+
+  footer {
+    border-top: 1px solid var(--line); padding: 36px 0; margin-top: 40px;
+    color: var(--ink-2); font-size: 13px; text-align: center;
+  }
+
+  @media (max-width: 720px) { nav ul { display: none; } header { padding: 60px 0 20px; } }
+</style>
+</head>
+<body>
+<div class="starfield"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div>
+        <div class="brand-name">Zodiac Reverie</div>
+        <div class="brand-sub">Terms of Use</div>
+      </div>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="terms.html" class="active">Terms</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Terms of Use</div>
+    <h1>The terms of sitting together.</h1>
+    <div class="updated">Last updated · October 14, 2026</div>
+  </header>
+
+  <article>
+
+    <p>By downloading, installing, or using Zodiac Reverie (the "App"), you agree to these Terms of Use. Please read them carefully. If you do not agree, please do not install or use the App.</p>
+
+    <h2>1. The App is for entertainment</h2>
+    <p>Zodiac Reverie provides daily readings, compatibility scores, fortune games, and a private photo-portrait feature based on the Chinese zodiac. The App is provided for <strong>entertainment and personal reflection only</strong>. It is not a substitute for professional advice of any kind — including medical, legal, financial, psychological, relationship, or career advice — and the readings should not be relied upon as factual predictions about your life.</p>
+
+    <h2>2. No account, no server</h2>
+    <p>The App does not require an account, login, or any personal information. All readings and saved items are stored locally on your device. Because the App does not collect account information, you are responsible for backing up your own device through iCloud or iTunes if you wish to preserve your data.</p>
+
+    <h2>3. Permissions</h2>
+    <p>The App requests access to the following, only when needed:</p>
+    <ul>
+      <li><strong>Camera</strong> — only inside Photo Reading, when you tap to capture.</li>
+      <li><strong>Photo Library</strong> — only inside Photo Reading, when you choose to import a portrait.</li>
+    </ul>
+    <p>You can revoke these permissions at any time in iOS Settings. The App does not request microphone, contacts, location, motion, Bluetooth, Face ID, or push-notification permissions.</p>
+
+    <h2>4. Acceptable use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use the App for any unlawful purpose.</li>
+      <li>Reverse-engineer, decompile, or attempt to extract the App's source code, except as permitted by applicable law.</li>
+      <li>Use the App to harass, threaten, or harm any other person.</li>
+      <li>Use the App's readings as the basis for medical, legal, financial, or other professional decisions.</li>
+    </ul>
+
+    <h2>5. Intellectual property</h2>
+    <p>The App, its design, illustrations, zodiac archetypes, and all text within it are the intellectual property of the developer and are protected by copyright and other applicable laws. You may not copy, redistribute, or create derivative works of the App or its contents without written permission.</p>
+
+    <h2>6. No warranty</h2>
+    <p>The App is provided "as is" and "as available," without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, accuracy of readings, or non-infringement. The developer does not warrant that the App will be uninterrupted, error-free, or that defects will be corrected.</p>
+
+    <h2>7. Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, the developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of, or inability to use, the App. In any event, the developer's total liability for any claim arising from the App shall not exceed the amount you paid for the App (which is currently zero, as the App is free).</p>
+
+    <h2>8. Children</h2>
+    <p>The App is suitable for all ages. The developer does not knowingly collect personal information from children. If you are a parent and believe your child has used the App, you may delete the App at any time to remove all data.</p>
+
+    <h2>9. Changes to the App and these terms</h2>
+    <p>The developer may update the App and these Terms from time to time. If a change affects you materially, the developer will surface a notice inside the App. Continued use of the App after an update constitutes acceptance of the updated Terms.</p>
+
+    <h2>10. Termination</h2>
+    <p>These Terms remain in effect for as long as you use the App. You may stop using the App at any time by deleting it from your device. The developer may discontinue the App at any time, in which case the App will be removed from the App Store.</p>
+
+    <h2>11. Governing law</h2>
+    <p>These Terms are governed by the laws applicable in the developer's jurisdiction, without regard to its conflict-of-law principles. If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.</p>
+
+    <h2>12. Contact</h2>
+    <p>If you have any questions about these Terms, please contact <a href="mailto:Mefepzavap@icloud.com">Mefepzavap@icloud.com</a>.</p>
+
+    <h2>13. Acknowledgement</h2>
+    <p>By tapping "I understand" on the disclaimer screen in the App, or by continuing to use the App, you acknowledge that you have read, understood, and agreed to these Terms of Use and to the <a href="privacy.html">Privacy Policy</a>.</p>
+
+  </article>
+
+</div>
+
+<footer>
+  © 2026 Zodiac Reverie · <a href="mailto:Mefepzavap@icloud.com">Mefepzavap@icloud.com</a>
+</footer>
+
+</body>
+</html>

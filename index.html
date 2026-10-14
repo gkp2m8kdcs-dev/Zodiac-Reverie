@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zodiac Reverie — Daily Fortune, Compatibility & Crystal Ball</title>
+<meta name="description" content="Zodiac Reverie is a quiet, offline companion for the twelve animals of the Chinese zodiac. Daily reading, compatibility, crystal ball, tarot, lucky spin and photo reading — all on your phone." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg-0: #06070d;
+    --bg-1: #0c0e1a;
+    --bg-2: #141627;
+    --ink-0: #f5ecd7;
+    --ink-1: #cfc5a8;
+    --ink-2: #8c8a9b;
+    --gold: #d9b66b;
+    --gold-soft: #b89a52;
+    --violet: #8c6cd8;
+    --line: rgba(217, 182, 107, 0.18);
+    --card: rgba(20, 22, 39, 0.72);
+  }
+  html, body { background: var(--bg-0); color: var(--ink-0); }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background:
+      radial-gradient(1200px 700px at 80% -10%, rgba(140, 108, 216, 0.18), transparent 60%),
+      radial-gradient(900px 600px at -10% 30%, rgba(217, 182, 107, 0.10), transparent 60%),
+      radial-gradient(1000px 800px at 50% 110%, rgba(80, 60, 140, 0.18), transparent 60%),
+      var(--bg-0);
+    min-height: 100vh;
+  }
+  .starfield {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 28% 62%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 45% 30%, #fff 50%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 60% 80%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 75% 12%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 88% 48%, #fff 50%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 92% 76%, #fff 50%, transparent 60%),
+      radial-gradient(1px 1px at 8% 88%, #fff 50%, transparent 60%);
+    opacity: 0.55;
+  }
+  .wrap { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  a { color: var(--gold); text-decoration: none; transition: color .2s; }
+  a:hover { color: var(--ink-0); }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(6, 7, 13, 0.7);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; max-width: 1080px; margin: 0 auto;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #f7e6a8, var(--gold) 55%, #6b5226 100%);
+    box-shadow: 0 0 24px rgba(217, 182, 107, 0.4), inset 0 0 10px rgba(0,0,0,0.4);
+  }
+  .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; letter-spacing: 0.04em; font-weight: 600; }
+  .brand-sub { font-size: 11px; color: var(--ink-2); letter-spacing: 0.2em; text-transform: uppercase; }
+  nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
+  nav ul a { font-size: 13px; color: var(--ink-1); letter-spacing: 0.06em; }
+  nav ul a:hover { color: var(--gold); }
+
+  /* Hero */
+  .hero { padding: 110px 0 90px; text-align: center; position: relative; }
+  .hero .eyebrow {
+    color: var(--gold); letter-spacing: 0.32em; font-size: 12px;
+    text-transform: uppercase; margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 22px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero .lede {
+    color: var(--ink-1); font-size: clamp(16px, 1.5vw, 19px);
+    max-width: 640px; margin: 0 auto 40px;
+  }
+  .badges { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+  .badge {
+    border: 1px solid var(--line); padding: 8px 16px; border-radius: 999px;
+    font-size: 12px; letter-spacing: 0.12em; color: var(--ink-1); text-transform: uppercase;
+    background: rgba(20, 22, 39, 0.4);
+  }
+
+  .hero-art {
+    width: 100%; max-width: 920px; margin: 0 auto;
+    border-radius: 24px; overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 60px rgba(140, 108, 216, 0.18);
+    aspect-ratio: 16 / 9;
+    background: #0a0b14 url('https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A%20serene%20night%20sky%20filled%20with%20soft%20golden%20stars%2C%20deep%20indigo%20and%20violet%20gradient%2C%20a%20luminous%20zodiac%20wheel%20faintly%20visible%20in%20the%20cosmos%2C%20thin%20gold%20constellation%20lines%2C%20cinematic%20and%20minimal%2C%20ethereal%20and%20mystical&image_size=landscape_16_9') center/cover;
+  }
+
+  /* Sections */
+  section { padding: 80px 0; position: relative; }
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .section-head .eyebrow { color: var(--gold); letter-spacing: 0.32em; font-size: 12px; text-transform: uppercase; }
+  .section-head h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(30px, 4vw, 46px); margin: 14px 0 16px; letter-spacing: -0.01em;
+  }
+  .section-head p { color: var(--ink-2); max-width: 580px; margin: 0 auto; }
+
+  /* Features */
+  .grid {
+    display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 28px;
+    backdrop-filter: blur(6px);
+    transition: transform .3s ease, border-color .3s ease;
+  }
+  .card:hover { transform: translateY(-4px); border-color: rgba(217, 182, 107, 0.45); }
+  .card .ico {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: grid; place-items: center;
+    background: linear-gradient(140deg, rgba(217, 182, 107, 0.18), rgba(140, 108, 216, 0.18));
+    border: 1px solid var(--line);
+    margin-bottom: 18px;
+    font-size: 20px;
+  }
+  .card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 600; margin: 0 0 8px;
+  }
+  .card p { color: var(--ink-2); font-size: 14.5px; margin: 0; }
+
+  /* Twelve grid */
+  .twelve {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(6, 1fr);
+    max-width: 720px; margin: 0 auto;
+  }
+  @media (max-width: 640px) { .twelve { grid-template-columns: repeat(3, 1fr); } }
+  .sign {
+    aspect-ratio: 1 / 1;
+    display: grid; place-items: center;
+    border: 1px solid var(--line); border-radius: 14px;
+    background: rgba(20, 22, 39, 0.5);
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
+    transition: all .25s ease;
+    cursor: default;
+  }
+  .sign:hover { background: rgba(217, 182, 107, 0.1); border-color: var(--gold); transform: translateY(-2px); }
+
+  /* Screens */
+  .shots {
+    display: grid; gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .shot {
+    border-radius: 18px; overflow: hidden;
+    border: 1px solid var(--line);
+    aspect-ratio: 9 / 16;
+    background: #0a0b14 center/cover no-repeat;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+
+  /* Promise */
+  .promise {
+    border: 1px solid var(--line); border-radius: 24px;
+    padding: 56px 40px; text-align: center;
+    background:
+      radial-gradient(600px 300px at 50% 0%, rgba(140, 108, 216, 0.18), transparent 70%),
+      rgba(20,22,39,0.6);
+  }
+  .promise h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 40px); margin: 0 0 20px; font-weight: 500; }
+  .promise-list {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 28px;
+    color: var(--ink-1); margin-top: 28px;
+  }
+  .promise-list span { font-size: 14px; }
+  .promise-list span::before { content: '✕'; color: var(--gold); margin-right: 8px; font-weight: 500; }
+
+  /* CTA */
+  .cta {
+    text-align: center; padding: 90px 0;
+  }
+  .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 500; margin: 0 0 16px; }
+  .cta p { color: var(--ink-2); max-width: 520px; margin: 0 auto 28px; }
+  .cta a.btn {
+    display: inline-block; padding: 14px 32px; border-radius: 999px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+    color: #1a1300; font-weight: 500; letter-spacing: 0.08em; font-size: 14px;
+    text-transform: uppercase;
+    box-shadow: 0 14px 40px rgba(217, 182, 107, 0.25);
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 48px 0; margin-top: 40px;
+    color: var(--ink-2); font-size: 13px;
+  }
+  .foot-inner {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px;
+  }
+  .foot-links { display: flex; gap: 24px; }
+  .foot-links a { color: var(--ink-1); }
+
+  @media (max-width: 720px) {
+    nav ul { display: none; }
+    .hero { padding: 70px 0 60px; }
+    section { padding: 60px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="starfield"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div>
+        <div class="brand-name">Zodiac Reverie</div>
+        <div class="brand-sub">Daily Fortune · Compatibility · Crystal Ball</div>
+      </div>
+    </div>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#animals">Animals</a></li>
+      <li><a href="#screens">Gallery</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">A Quiet Companion for the Twelve Animals</div>
+    <h1>Read the day through <em>your sign</em>.</h1>
+    <p class="lede">A daily fortune across seven life areas, a compatibility reading between any two animals, a crystal ball whisper, three tarot cards, and a private portrait reading — all in one offline, account-free companion.</p>
+    <div class="badges">
+      <span class="badge">Offline</span>
+      <span class="badge">No Login</span>
+      <span class="badge">No Tracking</span>
+      <span class="badge">No Ads</span>
+      <span class="badge">No Subscription</span>
+    </div>
+    <div class="hero-art" role="img" aria-label="A cosmic night sky with a faint zodiac wheel"></div>
+  </header>
+
+  <section id="features">
+    <div class="section-head">
+      <div class="eyebrow">What's Inside</div>
+      <h2>Six rituals. One quiet screen.</h2>
+      <p>Each feature has been composed to feel less like an app and more like a small, considered habit.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="ico">☯︎</div>
+        <h3>Daily Reading</h3>
+        <p>Across overall, love, career, wealth, well-being, social and creativity — refreshed at midnight and saved locally.</p>
+      </div>
+      <div class="card">
+        <div class="ico">♡</div>
+        <h3>Compatibility</h3>
+        <p>Pair any two of the twelve animals. A grounded score, a long paragraph, and quiet advice.</p>
+      </div>
+      <div class="card">
+        <div class="ico">◉</div>
+        <h3>Crystal Ball</h3>
+        <p>One sentence, drawn once a day. The kind you might write in the margin of a book.</p>
+      </div>
+      <div class="card">
+        <div class="ico">✶</div>
+        <h3>Lucky Spin</h3>
+        <p>A graceful twelve-slice turn. A graceful, hand-drawn animation rather than a payout.</p>
+      </div>
+      <div class="card">
+        <div class="ico">✦</div>
+        <h3>Tarot Spread</h3>
+        <p>Three cards for past, present and future — each themed to a zodiac archetype.</p>
+      </div>
+      <div class="card">
+        <div class="ico">◐</div>
+        <h3>Photo Reading</h3>
+        <p>Add a portrait and let your animal read it. Nothing is uploaded, scanned or transmitted — every image stays on this device.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="animals">
+    <div class="section-head">
+      <div class="eyebrow">The Twelve</div>
+      <h2>All twelve animals, each with its own voice.</h2>
+      <p>Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog and Pig — the full wheel.</p>
+    </div>
+    <div class="twelve">
+      <div class="sign">Rat</div>
+      <div class="sign">Ox</div>
+      <div class="sign">Tiger</div>
+      <div class="sign">Rabbit</div>
+      <div class="sign">Dragon</div>
+      <div class="sign">Snake</div>
+      <div class="sign">Horse</div>
+      <div class="sign">Goat</div>
+      <div class="sign">Monkey</div>
+      <div class="sign">Rooster</div>
+      <div class="sign">Dog</div>
+      <div class="sign">Pig</div>
+    </div>
+  </section>
+
+  <section id="promise">
+    <div class="promise">
+      <h2>What is not in Zodiac Reverie.</h2>
+      <p style="color: var(--ink-2); max-width: 540px; margin: 0 auto;">The list is short on purpose. Your reading is the only thing on your screen.</p>
+      <div class="promise-list">
+        <span>Login</span>
+        <span>Account</span>
+        <span>Server sync</span>
+        <span>In-app purchase</span>
+        <span>Subscription</span>
+        <span>Push notification</span>
+        <span>Face ID</span>
+        <span>Tracking</span>
+        <span>Analytics</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="screens">
+    <div class="section-head">
+      <div class="eyebrow">From the App</div>
+      <h2>A glimpse of the dark, cosmic interface.</h2>
+      <p>No decoration for its own sake — only what helps the reading land.</p>
+    </div>
+    <div class="shots">
+      <div class="shot" style="background-image: url('screenshots/01-disclaimer.png')"></div>
+      <div class="shot" style="background-image: url('screenshots/02-disclaimer-mid.png')"></div>
+      <div class="shot" style="background-image: url('screenshots/03-home.png')"></div>
+      <div class="shot" style="background-image: url('screenshots/04-home-fixed.png')"></div>
+      <div class="shot" style="background-image: url('screenshots/05-home-final.png')"></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Sit with your sign tonight.</h2>
+    <p>Zodiac Reverie is free, offline, and yours to clear with a single tap.</p>
+    <a class="btn" href="support.html">Get in touch</a>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© 2026 Zodiac Reverie · Mefepzavap@icloud.com</div>
+    <div class="foot-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
